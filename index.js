@@ -6,10 +6,9 @@ const { getMessaging } = require("firebase-admin/messaging");
 const app = express();
 app.use(express.json());
 
-// Enable CORS for http://localhost:8081
 app.use(
   cors({
-    origin: "http://localhost:8081",
+    origin: "localhost",
     methods: ["POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "x-api-key"],
   })
