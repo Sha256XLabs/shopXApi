@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors"); // Add cors
 const { initializeApp, cert } = require("firebase-admin/app");
 const { getMessaging } = require("firebase-admin/messaging");
 
