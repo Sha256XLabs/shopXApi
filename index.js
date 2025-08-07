@@ -4,14 +4,16 @@ const { initializeApp, cert } = require("firebase-admin/app");
 const { getMessaging } = require("firebase-admin/messaging");
 
 const app = express();
+app.use(express.json());
+
+// Enable CORS for http://localhost:8081
 app.use(
   cors({
-    origin: "http://localhost:8081", // Allow your web app's origin
-    methods: ["POST"], // Allow only POST for /send-notification
-    allowedHeaders: ["Content-Type"], // Allow Content-Type header
+    origin: "http://localhost:8081",
+    methods: ["POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "x-api-key"],
   })
 );
-app.use(express.json());
 
 // Initialize Firebase Admin SDK with service account
 const serviceAccount = JSON.parse(
