@@ -11,6 +11,11 @@
       "src": "/send-notification",
       "methods": ["POST"],
       "dest": "index.js"
+    },
+    {
+      "src": "/",
+      "methods": ["GET"],
+      "dest": "index.js"
     }
   ]
 }
